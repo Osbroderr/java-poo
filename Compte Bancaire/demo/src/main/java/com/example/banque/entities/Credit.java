@@ -41,6 +41,14 @@ public class Credit {
         this.id = id;
     }
 
+    public Double getMontant() {
+        return montant;
+    }
+
+    public void setMontant(Double montant) {
+        this.montant = montant;
+    }
+
     public void setCompteBancaire(CompteBancaire compte) {
         this.compteBancaire = compte;
     }

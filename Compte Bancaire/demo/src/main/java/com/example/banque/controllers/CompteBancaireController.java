@@ -1,6 +1,5 @@
 package com.example.banque.controllers;
 
-import java.net.http.HttpResponse.ResponseInfo;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,12 +33,12 @@ public class CompteBancaireController {
         return ResponseEntity.ok().body(compte);
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public List<CompteBancaire> getAllComptes() {
         return compteService.findAll();
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public CompteBancaire createCompte(@RequestBody CompteBancaire compte) {
         return compteService.save(compte);
     }

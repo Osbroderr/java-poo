@@ -7,7 +7,7 @@ import com.example.banque.entities.CompteBancaire;
 import com.example.banque.entities.Credit;
 
 public interface CreditService {
-    Optional<Credit> findById(Long id);
+    Credit findById(Long id);
 
     List<Credit> findAll();
 

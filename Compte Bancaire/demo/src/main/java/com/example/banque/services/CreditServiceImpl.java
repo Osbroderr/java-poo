@@ -23,8 +23,8 @@ public class CreditServiceImpl implements CreditService {
     private CreditRepository creditRepository;
 
     @Override
-    public Optional<Credit> findById(Long id) {
-        return creditRepository.findById(id);
+    public Credit findById(Long id) {
+        return creditRepository.findById(id).orElse(null);
     }
 
     @Override
