@@ -36,12 +36,11 @@ public class CreditController {
 
     @PutMapping("/{id}")
     public Credit updateCredit(@PathVariable("id") Long id, @RequestBody Credit credit) {
-        credit.setId(id);
         return creditService.save(credit);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteCredit(@PathVariable("id") Long id) {
-        creditService.delete(id);
+    public void deleteCredit(@PathVariable("id") Long id, @RequestBody Credit credit) {
+        creditService.delete(credit);
     }
 }

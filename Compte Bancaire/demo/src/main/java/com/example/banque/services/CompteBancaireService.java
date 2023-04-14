@@ -15,4 +15,8 @@ public interface CompteBancaireService {
     CompteBancaire save(CompteBancaire compteBancaire);
 
     void delete(CompteBancaire compteBancaire);
+
+    CompteBancaire debiterCompte(CompteBancaire compte, double montant);
+
+    CompteBancaire crediterCompte(CompteBancaire compte, double montant);
 }

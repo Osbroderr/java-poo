@@ -17,5 +17,5 @@ public interface CreditService {
 
     Credit save(Credit credit);
 
-    void delete(Long id);
+    void delete(Credit credit);
 }

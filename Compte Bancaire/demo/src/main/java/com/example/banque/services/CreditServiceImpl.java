@@ -1,6 +1,5 @@
 package com.example.banque.services;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,7 +38,13 @@ public class CreditServiceImpl implements CreditService {
     }
 
     @Override
-    public void accorderCredit(CompteBancaire compteBancaire, Double montant) {
+    public Credit save(Credit credit) {
+        creditRepository.save(credit);
+        return credit;
+    }
+
+    @Override
+    public void accorderCredit(CompteBancaire compteBancaire, double montant) {
         Optional<CompteBancaire> optionalCompte = compteBancaireRepository.findById(compteBancaire.getId());
         if (optionalCompte.isPresent()) {
             CompteBancaire compte = optionalCompte.get();
@@ -53,12 +58,6 @@ public class CreditServiceImpl implements CreditService {
         } else {
             throw new EntityNotFoundException("Compte bancaire introuvable avec l'ID " + compteBancaire.getId());
         }
-    }
-
-    @Override
-    public Credit save(Credit credit) {
-        creditRepository.save(credit);
-        return credit;
     }
 
     @Override
